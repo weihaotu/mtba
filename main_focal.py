@@ -243,14 +243,14 @@ def loss(yhat, ghat, labels):
     # Compute loss for aspect classification
     aspect_loss = 0
     for i in range(num_aspects):
-        aspect_loss += nn.CrossEntropyLoss(weight=weights[:, i])(
-            yhat[:, i, :], aspect_labels[:, i]
-        )
-
-        # use focal loss
-        # aspect_loss += FocalLoss(reduction="mean", alpha=0.5, weight=weights[:, i])(
+        # aspect_loss += nn.CrossEntropyLoss(weight=weights[:, i])(
         #     yhat[:, i, :], aspect_labels[:, i]
         # )
+
+        # use focal loss
+        aspect_loss += FocalLoss(reduction="mean", alpha=0.5, weight=weights[:, i])(
+            yhat[:, i, :], aspect_labels[:, i]
+        )
     aspect_loss /= num_aspects
 
     # Initialize MSELoss for score regression and compute loss
