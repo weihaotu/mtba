@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gradient Text Highlight Example</title>
+    <style>
+        :root {
+            --gradient-red-opacity: 1;
+            --gradient-blue-opacity: 1;
+            --gradient-green-opacity: 1;
+        }
+
+        .gradient-red {
+            background: linear-gradient(90deg,
+                    rgba(255, 0, 0, 0) 0%,
+                    rgba(255, 0, 0, var(--gradient-red-opacity)) 50%,
+                    rgba(255, 0, 0, 0) 100%);
+            color: #000000;
+        }
+
+        .gradient-blue {
+            background: linear-gradient(90deg,
+                    rgba(0, 0, 255, 0) 0%,
+                    rgba(0, 0, 255, var(--gradient-blue-opacity)) 50%,
+                    rgba(0, 0, 255, 0) 100%);
+            color: #000000;
+        }
+
+        .gradient-green {
+            background: linear-gradient(90deg,
+                    rgba(0, 255, 0, 0) 0%,
+                    rgba(0, 255, 0, var(--gradient-green-opacity)) 50%,
+                    rgba(0, 255, 0, 0) 100%);
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        海底捞一如既往的<span class="gradient-red" style="--gradient-red-opacity: 0.7;">好服务</span>，味道也不错。五角场万达店交通方便，
+        <span class="gradient-red" style="--gradient-red-opacity: 0.9;">服务人员也都很热情</span>，
+        很到位，<span class="gradient-blue" style="--gradient-blue-opacity: 0.7;">环境也不错</span>，<span class="gradient-blue"
+            style="--gradient-blue-opacity: 0.5;">座位安排合理</span>，
+        就是如果<span class="gradient-blue" style="--gradient-blue-opacity: 0.4;">包厢容量再大一些</span>就好了！
+        提前订位多次确认联系，<span class="gradient-red" style="--gradient-red-opacity: 0.7;">服务周到细心</span>！我们的包间有两张桌子并排放可以座12个人，
+        自己<span class="gradient-green" style="--gradient-green-opacity: 0.7;">调料品种丰富</span>，而且<span
+            class="gradient-green" style="--gradient-green-opacity: 0.85;">食材新鲜</span>，
+        尤其虾滑和嫩牛肉最赞，<span class="gradient-green" style="--gradient-green-opacity: 0.6;">红油锅底不够辣</span>，
+        <span class="gradient-green" style="--gradient-green-opacity: 0.4;">菌汤锅底</span>还是<span class="gradient-green"
+            style="--gradient-green-opacity: 0.9;">很鲜的</span>，
+        用餐过后店家还送了水果拼盘讲了寓意很好的祝福，适合聚餐，<span class="gradient-blue" style="--gradient-blue-opacity: 0.8;">用餐环境好</span>，
+        刷卡也很便捷，总体来说是愉快的消费体验。
+    </p>
+</body>
+
+</html>
