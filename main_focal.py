@@ -296,11 +296,11 @@ def train(model, train_loader, criterion, epochs, load_cache=True):
     # optimizer = Adam(model.parameters(), lr=0.00012)
 
     if load_cache:
-        if os.path.exists(os.path.join(cacheDir, modelDir,"./model.pth")):
-            model.load_state_dict(torch.load(os.path.join(cacheDir, modelDir,"model.pth")))
-        if os.path.exists(os.path.join(cacheDir, optimizerDir,"./optimizer.pth")):
+        if os.path.exists(os.path.join(cacheDir, modelDir,"./model_focal.pth")):
+            model.load_state_dict(torch.load(os.path.join(cacheDir, modelDir,"./model_focal.pth")))
+        if os.path.exists(os.path.join(cacheDir, optimizerDir,"./optimizer_focal.pth")):
             optimizer.load_state_dict(
-                torch.load(os.path.join(cacheDir, optimizerDir,"optimizer.pth"))
+                torch.load(os.path.join(cacheDir, optimizerDir,"./optimizer_focal.pth"))
             )
 
     model.train()
@@ -329,8 +329,8 @@ def train(model, train_loader, criterion, epochs, load_cache=True):
         )  # 记录每个epoch的平均损失
 
         # save model and optimizer
-        torch.save(model.state_dict(), os.path.join(cacheDir, modelDir,"model.pth"))
-        torch.save(optimizer.state_dict(), os.path.join(cacheDir, optimizerDir,"optimizer.pth"))
+        torch.save(model.state_dict(), os.path.join(cacheDir, modelDir,"model_focal.pth"))
+        torch.save(optimizer.state_dict(), os.path.join(cacheDir, optimizerDir,"optimizer_focal.pth"))
 
     writer.flush()
     writer.close()
